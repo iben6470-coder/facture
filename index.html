@@ -4,17 +4,21 @@
 <head>
 
     <meta charset="UTF-8">
-    <h1 align="center" class="title-facture">Créer Facture</h1>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Créer Facture</title>
 
     <link rel="stylesheet" href="style.css">
 
 </head>
 
 <body>
+    <div class="logo">
+        <img src="logo.png" alt="logo">
+    </div>
+    <h5 class="title-facture">Créer Facture</h5>
 
     <div class="form-box">
-
-        
 
         <input id="client" placeholder="Nom et prénom du client">
 
@@ -37,15 +41,10 @@
         function createInvoice() {
 
             localStorage.setItem("client", document.getElementById("client").value)
-
             localStorage.setItem("phone", document.getElementById("phone").value)
-
             localStorage.setItem("email", document.getElementById("email").value)
-
             localStorage.setItem("service", document.getElementById("service").value)
-
             localStorage.setItem("total", document.getElementById("total").value)
-
             localStorage.setItem("avance", document.getElementById("avance").value)
 
             window.location = "facture.html"

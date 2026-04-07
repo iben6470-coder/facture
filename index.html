@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+    <meta charset="UTF-8">
+    <h1 align="center" class="title-facture">Créer Facture</h1>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <div class="form-box">
+
+        
+
+        <input id="client" placeholder="Nom et prénom du client">
+
+        <input id="phone" placeholder="Téléphone">
+
+        <input id="email" placeholder="Email">
+
+        <input id="service" placeholder="Service">
+
+        <input id="total" type="number" placeholder="Total MAD">
+
+        <input id="avance" type="number" placeholder="Avance">
+
+        <button onclick="createInvoice()">Créer Facture</button>
+
+    </div>
+
+    <script>
+
+        function createInvoice() {
+
+            localStorage.setItem("client", document.getElementById("client").value)
+
+            localStorage.setItem("phone", document.getElementById("phone").value)
+
+            localStorage.setItem("email", document.getElementById("email").value)
+
+            localStorage.setItem("service", document.getElementById("service").value)
+
+            localStorage.setItem("total", document.getElementById("total").value)
+
+            localStorage.setItem("avance", document.getElementById("avance").value)
+
+            window.location = "facture.html"
+
+        }
+
+    </script>
+
+</body>
+
+</html>

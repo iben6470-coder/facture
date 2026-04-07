@@ -21,6 +21,19 @@ h1 {
 }
 
 /* form */
+.title-facture {
+
+    position: absolute;
+    top: 70px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    color: #ededed;
+    font-size: 50px;
+    font-style: italic;
+    font-weight: 600;
+
+}
 
 .form-box {
 
@@ -37,12 +50,12 @@ h1 {
 input {
 
     all: unset;
-    padding: 15px;
-    border-radius: 12px;
+    padding: 30px;
+    border-radius: 13px;
     border: 2px solid transparent;
-    box-shadow: 0px 2px 2px rgb(255, 254, 254);
+    box-shadow: 0px 2px 2px rgb(255, 255, 255);
     transition: border .3s ease-in-out;
-    color: thistle;
+    color: rgb(220, 217, 220);
 }
 
 input:focus {
@@ -60,7 +73,7 @@ button {
 
     border-radius: 10px;
 
-    color: white;
+    color: rgb(255, 249, 249);
 
     font-weight: bold;
 
@@ -74,14 +87,26 @@ button {
 
 }
 
-button:hover{
+button:hover {
 
     transform: scale(1.05);
-    background:#000000;
+    background: #000000;
 
 }
 
 /* facture */
+.facture-title {
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    font-size: 40px;
+}
+
+.client-info {
+    margin-top: 30px;
+}
+
+
 
 .invoice {
 
@@ -89,7 +114,7 @@ button:hover{
 
     min-height: 297mm;
 
-    background: rgb(130, 127, 127);
+    background: rgb(223, 218, 218);
 
     margin: auto;
 
@@ -103,7 +128,7 @@ button:hover{
 
     height: 5px;
 
-    background: linear-gradient(90deg, #1f1c2c, #d66d75);
+    background: linear-gradient(90deg, #1c0e11, #ffffff);
 
     margin-bottom: 30px;
 
@@ -112,9 +137,9 @@ button:hover{
 
 
 .client-info {
-
-    margin-bottom: 30px;
-
+    margin-top: 40px;
+    line-height: 30px;
+    font-size: 16px;
 }
 
 table {
@@ -127,11 +152,12 @@ table {
 
 th {
 
-    background: #1f1c2c;
+    background: #000000;
 
-    color: rgb(47, 8, 31);
+    color: rgb(255, 245, 245);
 
-    padding: 12px;
+    padding: 18px;
+
 
 }
 
@@ -172,22 +198,17 @@ td {
 }
 
 .logo {
-
-    text-align: right;
-
-    margin-bottom: 2px;
-
+    position: absolute;
+    top: 5px;
+    right: 20px;
 }
 
 .logo img {
-
-    height: 200px;
-
-    width: auto;
-
-    filter: contrast(130%) brightness(90%);
-
+    width: 300px;
+    height: auto;
 }
+
+
 
 .title {
 
@@ -208,4 +229,63 @@ td {
 .card:hover {
     transform: translateY(-5px);
     background: #334155;
+}
+
+@media (max-width:600px) {
+
+    .form-box {
+        grid-template-columns: 1fr;
+
+        width: 90%;
+        margin: auto;
+    }
+
+    button {
+        grid-column: span 1;
+        width: 100%;
+    }
+
+    .title-facture {
+        font-size: 26px;
+        margin-top: 50px;
+        margin-bottom: 20px;
+    }
+
+    @media (max-width:600px) {
+
+        .logo {
+            top: 5px;
+            right: 10px;
+        }
+
+        .logo img {
+            width: 200px;
+
+            height: auto;
+        }
+    }
+}
+
+.invoice-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.invoice-logo {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    /* هادي كتخليه فاليمين */
+    width: 120px;
+}
+
+.invoice-header h1 {
+    font-size: 40px;
+    color: white;
+}
+
+.invoice {
+    position: relative;
 }

@@ -27,8 +27,8 @@
 
         <input id="phone" placeholder="Téléphone">
 
-       <input type="date" id="date">
-        
+        <input type="date" id="date">
+
         <input id="service" placeholder="Service">
 
         <input type="text" id="city" placeholder="Ville">
@@ -42,22 +42,27 @@
     </div>
 </body>
 
-    <script>
-function createInvoice() {
+<script>
+    function createInvoice() {
 
-localStorage.setItem("client", document.getElementById("client").value)
-localStorage.setItem("email", document.getElementById("email").value)
-localStorage.setItem("phone", document.getElementById("phone").value)
-localStorage.setItem("service", document.getElementById("service").value)
-localStorage.setItem("city", document.getElementById("city").value)
-localStorage.setItem("total", document.getElementById("total").value)
-localStorage.setItem("avance", document.getElementById("avance").value)
+        localStorage.setItem("client", document.getElementById("client").value)
+        localStorage.setItem("email", document.getElementById("email").value)
+        localStorage.setItem("phone", document.getElementById("phone").value)
+        localStorage.setItem("service", document.getElementById("service").value)
+        localStorage.setItem("city", document.getElementById("city").value)
+        localStorage.setItem("total", document.getElementById("total").value)
+        localStorage.setItem("avance", document.getElementById("avance").value)
 
-localStorage.setItem("date", document.getElementById("date").value)  <!-- هذا هو السطر الناقص -->
+        localStorage.setItem("date", document.getElementById("date").value)  <!-- هذا هو السطر الناقص -->
 
-window.location = "facture.html"
+        window.location = "facture.html"
 
-}
+    }
+    window.onload = function () {
+        if (localStorage.getItem("isAuthenticated") !== "true") {
+            window.location.href = "login.html";
+        }
+    }
 </script>
 
 </body>

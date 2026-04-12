@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+   <meta charset="UTF-8">
+   <title>Login</title>
+
+   <link rel="stylesheet" href="login.css">
+
+</head>
+
+<body>
+
+   <div class="container">
+
+      <div class="login-box">
+
+         <div class="left">
+
+            <h2>Login</h2>
+
+            <div class="input-box">
+               <input id="user" type="text" placeholder="Username">
+            </div>
+
+            <div class="input-box">
+               <input id="code" type="password" placeholder="Password">
+            </div>
+
+            <button onclick="login()">Login</button>
+
+            <p class="signup">
+               Don't have an account? <span>Sign Up</span>
+            </p>
+
+         </div>
+
+         <div class="right">
+
+            <h1>WELCOME<br>BACK!</h1>
+
+         </div>
+
+      </div>got 
+
+   </div>
+
+   <script>
+
+      function login() {
+
+         let user = document.getElementById("user").value
+         let code = document.getElementById("code").value
+
+         if (user === "admin" && code === "1234") {
+            window.location.href = "index.html"
+         }
+         else {
+            alert("User ou Code incorrect")
+         }
+
+      }
+
+   </script>
+</body>

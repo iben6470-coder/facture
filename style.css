@@ -1,3 +1,7 @@
+@page{
+size:A4;
+margin:20mm;
+}
 body {
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
@@ -96,33 +100,114 @@ button:hover {
 
 /* facture */
 .facture-title {
+    font-size: 48px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    font-style: italic;
+    color: #020202;
     text-align: center;
-    margin-top: 40px;
-    margin-bottom: 40px;
-    font-size: 40px;
-}
-
-.client-info {
-    margin-top: 30px;
-}
-
-
-
-.invoice {
-
-    width: 210mm;
-
-    min-height: 297mm;
-
-    background: rgb(223, 218, 218);
-
-    margin: auto;
-
-    padding: 30px 50px;
-
-    box-shadow: 0 10px 25px rgba(33, 14, 19, 0.992);
+    padding-bottom: 12px;
+    position: relative;
 
 }
+
+.facture-title::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 6px;
+    background: linear-gradient(90deg, #3e2723, #8d6e63, #d4af37);
+    
+}
+
+.invoice h1 {
+    color: #3e2723;
+    font-style: normal;
+    font-size: 45px;
+    letter-spacing: 2px;
+    text-align: left;
+}
+
+.customer-title {
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+
+.client-info p {
+    margin: 2px 0;
+    line-height: 1.2;
+}
+
+#client,
+#phone,
+#email {
+    font-weight: 600;
+    font-size: 18px;
+    margin: 4px 0;
+}
+
+#city {
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 2px 0;
+}
+
+.invoice-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 20px;
+    gap: 30px;
+    flex-wrap: wrap;
+   color: #4f3838;
+font-size: 18px;
+}
+.customer-block{
+display:flex;
+flex-direction:column;
+}
+
+.invoice-right {
+    width: 250px;
+
+}
+
+
+.invoice-right p {
+    text-align: left;
+    margin: 6px 0;
+    font-size: 14px;
+}
+
+.right-info {
+    position: absolute;
+    right: 0;
+    text-align: left;
+    
+}
+
+
+.payto {
+    direction: ltr;
+    unicode-bidi: plaintext;
+    text-align: left;
+    
+}
+ 
+
+.invoice{
+width:210mm;
+min-height:297mm;
+background:white;
+margin:auto;
+padding:25mm;
+box-shadow:0 10px 25px rgba(33,14,19,0.2);
+}
+
 
 .top-bar {
 
@@ -135,9 +220,8 @@ button:hover {
 }
 
 
-
 .client-info {
-    margin-top: 40px;
+    margin-top: 20px;
     line-height: 30px;
     font-size: 16px;
 }
@@ -145,14 +229,14 @@ button:hover {
 table {
 
     width: 100%;
-
+    margin-top: 40px;
     border-collapse: collapse;
-
+    margin-top: 80px;
 }
 
 th {
 
-    background: #000000;
+    background: #3e2723;
 
     color: rgb(255, 245, 245);
 
@@ -169,6 +253,18 @@ td {
 
     text-align: center;
 
+}
+.thank-text{
+text-align:right;
+margin-top:20px;
+}
+
+.payment-text{
+margin-top:180px;
+}
+
+.contact-mail{
+margin-top:10px;
 }
 
 /* print */
@@ -238,7 +334,7 @@ td {
 
         width: 90%;
         margin: auto;
-        margin-top:60px;
+        margin-top: 60px;
     }
 
     button {
@@ -278,7 +374,7 @@ td {
     position: absolute;
     top: 20px;
     right: 20px;
-    width: 120px;
+    width: 130px;
 }
 
 .invoice-header h1 {
@@ -289,3 +385,36 @@ td {
 .invoice {
     position: relative;
 }
+
+
+@media print{
+body{
+background:white !important;
+}
+}
+@media print{
+
+body{
+margin:0;
+background:white;
+}
+
+.invoice{
+width:190mm;
+height:260mm;
+margin:auto;
+padding:20px;
+box-shadow:none;
+}
+
+button{
+display:none;
+}
+
+table{
+font-size:14px;
+}
+
+}
+
+

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>INVOICE</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <div class="invoice">
+
+        <img src="logo2.png" class="invoice-logo">
+
+        <h1 class="facture-title">INVOICE</h1>
+        <div style="height:60px;"></div>
+        <div class="invoice-top">
+            <div class="customer-block">
+                <p class="customer-title"><u> CUSTOMER INFO:</u></p>
+
+                <div class="client-info">
+                    <p id="client"></p>
+                    <p id="email"></p>
+                    <p id="phone"></p>
+                    <p id="city"></p>
+                </div>
+            </div>
+            <div class="invoice-right">
+                <div class="payto">
+                    <p><b><u> PAY TO:</u></b></p>
+                    <p><b>Ouahrani production</b></p>
+                    <p>Tanger tetouan al hoceima standard de Ksar el kebir </p>
+
+                    <p><b><u> CONTACT :</u></b></p>
+                    <p>+212 658052133</p>
+                    <p>Groupe.opsgeneral@outlook.fr</p>
+                    <p>92150 #72847799-</p>
+                    <p><b><u> DATE D’ÉVÉNEMENT :</u></b></p>
+                    <div class="input-box">
+                        <p id="date"></p>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+        <table>
+
+            <tr>
+                <th>Service</th>
+                <th>Total</th>
+                <th>Avance</th>
+                <th>Reste</th>
+            </tr>
+
+            <tr>
+                <td id="service"></td>
+                <td id="total"></td>
+                <td id="avance"></td>
+                <td id="reste"></td>
+            </tr>
+
+        </table>
+        <p class="thank-text">Thank you for your business.</p>
+
+        <p class="payment-text">
+            Payment is required within 24 business hours of invoice date.
+        </p>
+
+        <p class="contact-mail">groupe.opsgeneral@outlook.fr</p>
+        <button onclick="window.print()">Imprimer Facture</button>
+
+    </div>
+
+    <script>
+        let client = localStorage.getItem("client")
+        let phone = localStorage.getItem("phone")
+        let email = localStorage.getItem("email")
+        let city = localStorage.getItem("city")
+
+        let service = localStorage.getItem("service")
+        let total = localStorage.getItem("total")
+        let avance = localStorage.getItem("avance")
+        let date = localStorage.getItem("date")
+        let reste = total - avance
+
+        document.getElementById("client").innerText = client
+        document.getElementById("phone").innerText = phone
+        document.getElementById("email").innerText = email
+        document.getElementById("city").innerText = city
+
+        document.getElementById("service").innerText = service
+        document.getElementById("total").innerText = total + " MAD"
+        document.getElementById("avance").innerText = avance + " MAD"
+        document.getElementById("reste").innerText = reste + " MAD"
+        document.getElementById("date").innerText = date
+    </script>
+
+</body>
+
+</html>

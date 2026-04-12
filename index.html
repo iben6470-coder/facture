@@ -16,17 +16,22 @@
     <div class="logo">
         <img src="logo.png" alt="logo">
     </div>
+
     <h5 class="title-facture">Créer Facture</h5>
 
     <div class="form-box">
 
         <input id="client" placeholder="Nom et prénom du client">
 
-        <input id="phone" placeholder="Téléphone">
-
         <input id="email" placeholder="Email">
 
+        <input id="phone" placeholder="Téléphone">
+
+       <input type="date" id="date">
+        
         <input id="service" placeholder="Service">
+
+        <input type="text" id="city" placeholder="Ville">
 
         <input id="total" type="number" placeholder="Total MAD">
 
@@ -35,23 +40,25 @@
         <button onclick="createInvoice()">Créer Facture</button>
 
     </div>
+</body>
 
     <script>
+function createInvoice() {
 
-        function createInvoice() {
+localStorage.setItem("client", document.getElementById("client").value)
+localStorage.setItem("email", document.getElementById("email").value)
+localStorage.setItem("phone", document.getElementById("phone").value)
+localStorage.setItem("service", document.getElementById("service").value)
+localStorage.setItem("city", document.getElementById("city").value)
+localStorage.setItem("total", document.getElementById("total").value)
+localStorage.setItem("avance", document.getElementById("avance").value)
 
-            localStorage.setItem("client", document.getElementById("client").value)
-            localStorage.setItem("phone", document.getElementById("phone").value)
-            localStorage.setItem("email", document.getElementById("email").value)
-            localStorage.setItem("service", document.getElementById("service").value)
-            localStorage.setItem("total", document.getElementById("total").value)
-            localStorage.setItem("avance", document.getElementById("avance").value)
+localStorage.setItem("date", document.getElementById("date").value)  <!-- هذا هو السطر الناقص -->
 
-            window.location = "facture.html"
+window.location = "facture.html"
 
-        }
-
-    </script>
+}
+</script>
 
 </body>
 
